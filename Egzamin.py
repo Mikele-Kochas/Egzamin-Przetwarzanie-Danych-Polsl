@@ -1,8 +1,25 @@
 import streamlit as st
+import random
+
+
+def shuffle_options(question):
+    options = question['options']
+    correct_answer = question['answer']
+    correct_option = options[ord(correct_answer) - ord('A')]
+
+    shuffled_options = random.sample(options, len(options))
+    new_correct_index = shuffled_options.index(correct_option)
+    new_correct_letter = chr(ord('A') + new_correct_index)
+
+    return {
+        'question': question['question'],
+        'options': shuffled_options,
+        'answer': new_correct_letter
+    }
 
 
 def quiz():
-    questions = [
+    original_questions = [
         {
             "question": "Które z poniższych najlepiej definiuje 'dane'?",
             "options": ["A) Zorganizowane fakty, które mają znaczenie dla użytkownika.",
@@ -85,6 +102,10 @@ def quiz():
         }
     ]
 
+    if 'shuffled_questions' not in st.session_state:
+        st.session_state.shuffled_questions = [shuffle_options(q) for q in
+                                               random.sample(original_questions, len(original_questions))]
+
     if 'score' not in st.session_state:
         st.session_state.score = 0
     if 'question_index' not in st.session_state:
@@ -102,12 +123,13 @@ def quiz():
             st.experimental_rerun()
 
     if st.session_state.quiz_started:
-        if st.session_state.question_index < len(questions):
-            question = questions[st.session_state.question_index]
+        if st.session_state.question_index < len(st.session_state.shuffled_questions):
+            question = st.session_state.shuffled_questions[st.session_state.question_index]
             st.write(f"\n**Pytanie {st.session_state.question_index + 1}:** {question['question']}")
 
-            user_answer = st.radio("Twoja odpowiedź:", options=question['options'],
-                                   key=str(st.session_state.question_index))
+            options = [f"{chr(65 + i)}) {option.split(')', 1)[1].strip()}" for i, option in
+                       enumerate(question['options'])]
+            user_answer = st.radio("Twoja odpowiedź:", options, key=str(st.session_state.question_index))
 
             if st.button("Następne pytanie"):
                 st.session_state.user_answers.append(user_answer)
@@ -117,12 +139,13 @@ def quiz():
                 st.experimental_rerun()
 
         else:
-            st.write(f"\n**Quiz zakończony! Twój wynik to:** {st.session_state.score}/{len(questions)}")
+            st.write(
+                f"\n**Quiz zakończony! Twój wynik to:** {st.session_state.score}/{len(st.session_state.shuffled_questions)}")
 
             st.write("\n**Lista poprawnych odpowiedzi:**")
-            for idx, question in enumerate(questions):
+            for idx, (question, user_answer) in enumerate(
+                    zip(st.session_state.shuffled_questions, st.session_state.user_answers)):
                 correct_option = question['options'][ord(question['answer']) - ord('A')]
-                user_answer = st.session_state.user_answers[idx]
                 is_correct = user_answer.startswith(question['answer'])
 
                 st.write(f"{idx + 1}. {question['question']}")
@@ -135,6 +158,8 @@ def quiz():
                 st.session_state.score = 0
                 st.session_state.question_index = 0
                 st.session_state.user_answers = []
+                st.session_state.shuffled_questions = [shuffle_options(q) for q in
+                                                       random.sample(original_questions, len(original_questions))]
                 st.experimental_rerun()
 
 
