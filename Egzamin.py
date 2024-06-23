@@ -64,7 +64,7 @@ def quiz():
     if 'user_answers' not in st.session_state:
         st.session_state.user_answers = []
 
-    st.title("Quiz z systemów informatycznych")
+    st.title("Quiz z przetwarzania danych")
 
     if not st.session_state.quiz_started:
         if st.button("Rozpocznij quiz"):
