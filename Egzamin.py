@@ -19,35 +19,169 @@ def shuffle_options(question):
 def quiz():
     original_questions = [
         {
-            "question": "Czym charakteryzują się systemy ewidencyjne?",
-            "options": ["A) Analizują strategiczne problemy decyzyjne",
-                        "B) Tworzą zbiory elementarnych danych o funkcjonowaniu obiektu",
-                        "C) Informują o stanie obiektu i jego poszczególnych parametrach",
-                        "D) Dokonują inteligentnej analizy danych"],
+            "question": "Które z poniższych najlepiej definiuje 'dane'?",
+            "options": ["A) Zorganizowane fakty, które mają znaczenie dla użytkownika.",
+                        "B) Surowe, nieprzetworzone fakty i liczby bez kontekstu.",
+                        "C) Zrozumienie informacji, jej analiza i interpretacja.",
+                        "D) Zdolność do podejmowania trafnych decyzji na podstawie wiedzy."],
             "answer": "B"
         },
         {
-            "question": "Jakie zadanie mają systemy informowania kierownictwa?",
-            "options": ["A) Informują o stanie obiektu i jego poszczególnych parametrach",
-                        "B) Tworzą zbiory elementarnych danych o funkcjonowaniu obiektu",
-                        "C) Analizują strategiczne problemy decyzyjne",
-                        "D) Dokonują inteligentnej analizy danych"],
-            "answer": "A"
+            "question": "Informacja to:",
+            "options": ["A) Surowe fakty i liczby bez kontekstu.",
+                        "B) Dane zorganizowane lub przetworzone w sposób, który nadaje im kontekst.",
+                        "C) Zrozumienie i interpretacja danych.",
+                        "D) Zdolność do podejmowania decyzji na podstawie wiedzy."],
+            "answer": "B"
         },
         {
-            "question": "Co charakteryzuje systemy wspomagania decyzji?",
-            "options": ["A) Informują o stanie obiektu i jego poszczególnych parametrach",
-                        "B) Tworzą zbiory elementarnych danych o funkcjonowaniu obiektu",
-                        "C) Analizują strategiczne problemy decyzyjne",
-                        "D) Dokonują analizy danych z wykorzystaniem sztucznej inteligencji"],
+            "question": "Wiedza to:",
+            "options": ["A) Dane zorganizowane lub przetworzone w sposób, który nadaje im kontekst.",
+                        "B) Zrozumienie informacji, jej analiza i interpretacja.",
+                        "C) Zdolność do podejmowania trafnych decyzji na podstawie informacji.",
+                        "D) Surowe, nieprzetworzone fakty i liczby."],
+            "answer": "B"
+        },
+        {
+            "question": "Mądrość to:",
+            "options": ["A) Surowe, nieprzetworzone fakty i liczby.",
+                        "B) Zrozumienie informacji, jej analiza i interpretacja.",
+                        "C) Zdolność do podejmowania trafnych decyzji na podstawie wiedzy.",
+                        "D) Dane zorganizowane lub przetworzone w sposób, który nadaje im kontekst."],
             "answer": "C"
         },
         {
+            "question": "Które z poniższych jest kryterium oceny jakości informacji?",
+            "options": ["A) Dyspozycyjność",
+                        "B) Różnorodność",
+                        "C) Ilość",
+                        "D) Złożoność"],
+            "answer": "A"
+        },
+        {
+            "question": "Które z poniższych NIE jest kryterium oceny jakości informacji?",
+            "options": ["A) Dyspozycyjność",
+                        "B) Dokładność",
+                        "C) Aktualność",
+                        "D) Użyteczność"],
+            "answer": "D"
+        },
+        {
+            "question": "System informacyjny to:",
+            "options": ["A) System przechowujący, przetwarzający i przekazujący informacje.",
+                        "B) System skupiający się tylko na przechowywaniu danych.",
+                        "C) Tylko sprzęt komputerowy i oprogramowanie.",
+                        "D) Tylko sieci komputerowe."],
+            "answer": "A"
+        },
+        {
+            "question": "System informatyczny to:",
+            "options": ["A) System skupiający się na przetwarzaniu danych przy użyciu technologii informacyjnych.",
+                        "B) System skupiający się tylko na przechowywaniu danych.",
+                        "C) Tylko sieci komputerowe.",
+                        "D) System przechowujący, przetwarzający i przekazujący informacje."],
+            "answer": "A"
+        },
+        {
+            "question": "System komputerowy to:",
+            "options": ["A) Zbiór sprzętu komputerowego, oprogramowania i sieci komputerowych.",
+                        "B) System przechowujący, przetwarzający i przekazujący informacje.",
+                        "C) System skupiający się tylko na przechowywaniu danych.",
+                        "D) Zbiór sprzętu komputerowego i procesów biznesowych firmy."],
+            "answer": "A"
+        },
+        {
+            "question": "Który z poniższych elementów NIE jest typowym składnikiem systemu informacyjnego?",
+            "options": ["A) Sprzęt komputerowy",
+                        "B) Oprogramowanie",
+                        "C) Procesy informacyjne",
+                        "D) Interfejs użytkownika"],
+            "answer": "D"
+        },
+        {
+            "question": "Co to jest funkcja ewidencji danych w systemie informatycznym?",
+            "options": ["A) Zbieranie danych o istotnych parametrach organizacyjnych",
+                        "B) Przechowywanie i zabezpieczanie danych",
+                        "C) Sortowanie i przetwarzanie danych",
+                        "D) Wyszukiwanie danych w celu uzyskania odpowiedzi"],
+            "answer": "A"
+        },
+        {
+            "question": "Jakie operacje można wykonywać w ramach funkcji przekształcania danych w systemie informatycznym?",
+            "options": ["A) Bezpieczeństwo danych i ich dostępność",
+                        "B) Wyszukiwanie i wyprowadzanie danych",
+                        "C) Różnorodne operacje na danych, np. sortowanie, obliczenia",
+                        "D) Określanie nośników danych i ich dostępności"],
+            "answer": "C"
+        },
+        {
+            "question": "Co obejmuje funkcja przechowywania danych w systemie informatycznym?",
+            "options": ["A) Ewidencja i przekształcanie danych",
+                        "B) Bezpieczeństwo danych i ich dostępność",
+                        "C) Zbieranie danych o istotnych parametrach organizacyjnych",
+                        "D) Określenie nośników danych i sposobu ich dostępu"],
+            "answer": "B"
+        },
+        {
+            "question": "Jakie są główne zadania funkcji ewidencji danych w systemie informatycznym?",
+            "options": ["A) Zbieranie danych o istotnych parametrach organizacyjnych",
+                        "B) Wyszukiwanie i wyprowadzanie danych",
+                        "C) Przechowywanie i zabezpieczanie danych",
+                        "D) Różnorodne operacje na danych, np. sortowanie, obliczenia"],
+            "answer": "A"
+        },
+        {
+            "question": "Czym charakteryzują się systemy ewidencyjne?",
+            "options": [
+                "A) Analizują strategiczne problemy decyzyjne",
+                "B) Tworzą zbiory elementarnych danych o funkcjonowaniu obiektu",
+                "C) Informują o stanie obiektu i jego poszczególnych parametrach",
+                "D) Dokonują inteligentnej analizy danych"
+            ],
+            "correct_answer": "B"
+        },
+        {
+            "question": "Jakie zadanie mają systemy informowania kierownictwa?",
+            "options": [
+                "A) Informują o stanie obiektu i jego poszczególnych parametrach",
+                "B) Tworzą zbiory elementarnych danych o funkcjonowaniu obiektu",
+                "C) Analizują strategiczne problemy decyzyjne",
+                "D) Dokonują inteligentnej analizy danych"
+            ],
+            "correct_answer": "A"
+        },
+        {
             "question": "Czym charakteryzują się systemy ekspertowe?",
-            "options": ["A) Tworzą zbiory elementarnych danych o funkcjonowaniu obiektu",
-                        "B) Informują o stanie obiektu i jego poszczególnych parametrach",
-                        "C) Analizują strategiczne problemy decyzyjne",
-                        "D) Są 'samouczące się', dokonują inteligentnej analizy danych"],
+            "options": [
+                "A) Tworzą zbiory elementarnych danych o funkcjonowaniu obiektu",
+                "B) Informują o stanie obiektu i jego poszczególnych parametrach",
+                "C) Analizują strategiczne problemy decyzyjne",
+                "D) Są 'samouczące się', dokonują inteligentnej analizy danych"
+            ],
+            "correct_answer": "D"
+        },
+        {
+            "question": "Co obejmuje funkcja przekształcania danych w systemie informatycznym?",
+            "options": ["A) Określanie nośników danych i ich dostępności",
+                        "B) Różnorodne operacje na danych, np. sortowanie, obliczenia",
+                        "C) Bezpieczeńwo danych i ich dostępność",
+                        "D) Zbieranie danych o istotnych parametrach organizacyjnych"],
+            "answer": "B"
+        },
+        {
+            "question": "Jakie są główne aspekty funkcji przechowywania danych w systemie informatycznym?",
+            "options": ["A) Ewidencja i przekształcanie danych",
+                        "B) Sortowanie i przetwarzanie danych",
+                        "C) Bezpieczeńwo danych i ich dostępność",
+                        "D) Wyszukiwanie danych w celu uzyskania odpowiedzi"],
+            "answer": "C"
+        },
+        {
+            "question": "Czym charakteryzuje się funkcja wyszukiwania i wyprowadzania danych w systemie informatycznym?",
+            "options": ["A) Przechowywanie i zabezpieczanie danych",
+                        "B) Zbieranie danych o istotnych parametrach organizacyjnych",
+                        "C) Określanie nośników danych i ich dostępności",
+                        "D) Sposoby przeszukiwania danych w celu uzyskania odpowiedzi"],
             "answer": "D"
         }
     ]
