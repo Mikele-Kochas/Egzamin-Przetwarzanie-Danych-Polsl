@@ -187,8 +187,7 @@ def quiz():
             "answer": "D"
         }
     ]
-
-     additional_questions = [
+    additional_questions = [
         {
             "question": "Czym charakteryzuje się proces standaryzacji danych?",
             "options": [
