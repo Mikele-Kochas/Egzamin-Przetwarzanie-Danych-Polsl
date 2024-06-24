@@ -188,6 +188,51 @@ def quiz():
         }
     ]
 
+     additional_questions = [
+        {
+            "question": "Czym charakteryzuje się proces standaryzacji danych?",
+            "options": [
+                "A) Przekształceniem danych tak, aby miały średnią równą zero i odchylenie standardowe równe jeden.",
+                "B) Przekształceniem danych tak, aby mieściły się w zakresie od 0 do 1.",
+                "C) Ustawianiem progów, które określają akceptowalne wartości danych.",
+                "D) Grupowaniem danych w klastry na podstawie ich podobieństwa."
+            ],
+            "answer": "A"
+        },
+        {
+            "question": "Które z poniższych najlepiej opisuje normalizację danych?",
+            "options": [
+                "A) Przekształcanie danych w taki sposób, aby miały średnią równą zero.",
+                "B) Przekształcanie danych w taki sposób, aby mieściły się w określonym zakresie, zazwyczaj od 0 do 1.",
+                "C) Ustawianie progów, które określają akceptowalne wartości danych.",
+                "D) Analiza danych w celu wykrycia ukrytych wzorców."
+            ],
+            "answer": "B"
+        },
+        {
+            "question": "Jakie jest główne zastosowanie progowania w przetwarzaniu danych?",
+            "options": [
+                "A) Skalowanie danych do określonego zakresu.",
+                "B) Przekształcanie danych w taki sposób, aby miały średnią równą zero i odchylenie standardowe równe jeden.",
+                "C) Ustawianie granic, które określają, które wartości danych są akceptowalne, a które nie.",
+                "D) Grupowanie danych w klastry na podstawie ich podobieństwa."
+            ],
+            "answer": "C"
+        },
+        {
+            "question": "Które z poniższych stwierdzeń jest prawdziwe o normalizacji i standaryzacji?",
+            "options": [
+                "A) Normalizacja i standaryzacja to dwa różne terminy na ten sam proces.",
+                "B) Normalizacja przekształca dane do średniej równej zero, a standaryzacja skaluje dane do zakresu od 0 do 1.",
+                "C) Standaryzacja przekształca dane do średniej równej zero i odchylenia standardowego równego jeden, podczas gdy normalizacja skaluje dane do określonego zakresu.",
+                "D) Normalizacja ustawia granice akceptowalności danych, a standaryzacja grupuje dane w klastry."
+            ],
+            "answer": "C"
+        }
+    ]
+
+    original_questions.extend(additional_questions)
+
     if 'shuffled_questions' not in st.session_state:
         st.session_state.shuffled_questions = [shuffle_options(q) for q in
                                                random.sample(original_questions, len(original_questions))]
